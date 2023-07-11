@@ -113,7 +113,7 @@ export default function Home({
       <p className="text-xs text-zinc-400 w-full text-center">
         Built by{' '}
         <a
-          href="https://github.com/ssantoshp"
+          href="https://ssantoshp.github.io/"
           className="underline hover:text-amber-400"
         >
           Santosh Passoubady
