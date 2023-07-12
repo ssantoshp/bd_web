@@ -17,63 +17,40 @@ type TRelease = {
 
 export default function Home({
   data,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetStaticPropsType<any>) {
   return (
     <main
-      className={`flex min-h-screen flex-col px-4 md:px-8 py-4 xl:py-8 bg-gradient-to-b xl:bg-gradient-to-bl from-violet-950 via-zinc-950 to-black`}
+      className={`flex min-h-screen flex-col px-4 md:px-8 py-4 xl:py-8 bg-gradient-to-b xl:bg-gradient-to-bl from-green-950 via-zinc-950 to-black`}
     >
       <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto">
         <div className="flex items-center justify-between">
           <Link href="/">
             <LogoLarge className="w-20 xl:w-24 text-white" />
           </Link>
-          <div className="flex items-center justify-between">
-            <Link href="/pricing">
-              <div className="text-sm text-slate-300 hover:text-slate-50 px-4 py-2 bg-transparent rounded-md hover:bg-violet-300/20 cursor-pointer">
-                Pricing
-              </div>
-            </Link>
-            <Link href="/changelog">
-              <div className="text-sm text-slate-300 hover:text-slate-50 px-4 py-2 bg-transparent rounded-md hover:bg-violet-300/20 cursor-pointer">
-                Changelog
-              </div>
-            </Link>
-          </div>
         </div>
         <div className="flex flex-col xl:flex-row items-center justify-between mt-8 xl:mt-20">
           <div className="flex flex-col items-center xl:items-start justify-start w-full xl:max-w-[640px]">
-            <Link href="/changelog">
+            <Link href="https://github.com/ssantoshp/ByteDetective" target="_blank">
               <Capsule
-                text={`v${data.version} is out! See what's new`}
-                additionalStyles="mb-2 xl:mb-4 hover:bg-violet-700/20 pointer"
+                text={`⭐ See on GitHub`}
+                additionalStyles="mb-2 xl:mb-4 hover:bg-green-700/20 pointer"
                 icon={
-                  <RightArrow className="w-4 h-4 text-violet-300 group-hover:text-violet-400 ml-1" />
+                  <RightArrow className="w-4 h-4 text-green-300 group-hover:text-green-400 ml-1" />
                 }
               />
             </Link>
-            <h1 className="text-4xl md:text-6xl py-2 tracking-tighter text-transparent font-bold bg-clip-text bg-gradient-to-br from-slate-50 to-violet-700">
-              Get going faster.
+            <h1 className="text-4xl md:text-6xl py-2 tracking-tighter text-transparent font-bold bg-clip-text bg-gradient-to-br from-slate-50 to-green-700">
+            Image search made intuitive
             </h1>
             <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
-              Yack is a MacOS app that lets you access ChatGPT right at your
-              fingertips.{' '}
-            </p>
-            <p className="mt-2 mx-1 xl:mx-0 xl:mt-4 text-base xl:text-xl text-slate-300">
-              Your favourite AI assistant now lives in your{' '}
-              <strong className="text-slate-50 border-b border-dotted border-slate-300 pb-0.5">
-                menu bar
-              </strong>
-              .
-            </p>
-            <p className="!mt-4 text-slate-300 text-sm">
-              Requires an Open AI key for usage.
+            ByteDetective is a MacOS desktop app that let you search for images on your computer by describing them.{' '}
             </p>
             <div className="flex items-center mt-8">
               <DownloadLink
                 label="for Apple Silicon"
                 subtitle="2020 and later models"
                 icon={<DownloadIcon className="w-4 h-4 mr-1.5 text-slate-50" />}
-                href={data.downloadLinks.arm}
+                href="https://github.com/ssantoshp/ByteDetective/releases/latest/download/ByteDetective.dmg"
               />
               <DownloadLink
                 label="for Intel Chips"
@@ -83,7 +60,7 @@ export default function Home({
                   <DownloadIcon className="w-4 h-4 mr-1.5 text-slate-200" />
                 }
                 type="secondary"
-                href={data.downloadLinks.intel}
+                href="https://github.com/ssantoshp/ByteDetective/releases/latest/download/ByteDetective.dmg"
               />
             </div>
           </div>
@@ -100,11 +77,10 @@ export default function Home({
       </section>
       <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto mt-12 xl:mt-24">
         <h3 className="text-2xl md:text-4xl w-full font-bold text-transparent text-center bg-clip-text bg-gradient-to-br from-slate-50 to-slate-600">
-          Built with you in mind.
+          Why it's awesome
         </h3>
         <p className="text-sm md:text-base text-center mt-2 text-slate-300">
-          Yack is purpose-built to help make accessing ChatGPT as easy as
-          possible. Lightweight, fast, and simple.
+          Beside the fact that it's free and open source ;)
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-8 mt-8">
@@ -115,14 +91,14 @@ export default function Home({
       </section>
       <section className="w-full lg:w-4/5 2xl:w-3/4 flex flex-col mx-auto my-12 xl:my-24">
         <h3 className="text-lg md:text-2xl w-full font-bold text-zinc-100 text-center">
-          Wanna get going faster?
+          Wanna search images faster?
         </h3>
         <div className="flex items-center mx-auto mt-4">
           <DownloadLink
             label="for Apple Silicon"
             subtitle="2020 and later models"
             icon={<DownloadIcon className="w-4 h-4 mr-1.5 text-slate-50" />}
-            href={data.downloadLinks.arm}
+            href="https://github.com/ssantoshp/ByteDetective/releases/latest/download/ByteDetective.dmg"
           />
           <DownloadLink
             label="for Intel Chips"
@@ -130,47 +106,19 @@ export default function Home({
             style="ml-3"
             icon={<DownloadIcon className="w-4 h-4 mr-1.5 text-slate-200" />}
             type="secondary"
-            href={data.downloadLinks.intel}
+            href="https://github.com/ssantoshp/ByteDetective/releases/latest/download/ByteDetective.dmg"
           />
         </div>
       </section>
       <p className="text-xs text-zinc-400 w-full text-center">
         Built by{' '}
         <a
-          href="https://twitter.com/JokingRajat"
+          href="https://github.com/ssantoshp"
           className="underline hover:text-amber-400"
         >
-          Rajat
+          Santosh Passoubady
         </a>
       </p>
     </main>
   )
-}
-
-export const getStaticProps: GetStaticProps<{
-  data: TRelease
-}> = async () => {
-  const getUpdaterJson = async () => {
-    const response = await fetch(`${process.env.R2_PUBLIC_URL}/updater.json`)
-    const data = await response.json()
-    return data
-  }
-
-  const response = await getUpdaterJson()
-
-  let latestVersion = response.version
-  latestVersion = latestVersion.replace('v', '')
-
-  return {
-    props: {
-      data: {
-        version: latestVersion,
-        downloadLinks: {
-          arm: `${process.env.R2_PUBLIC_URL}/${latestVersion}/arm/yack_${latestVersion}_aarch64.dmg`,
-          intel: `${process.env.R2_PUBLIC_URL}/${latestVersion}/intel/yack_${latestVersion}_x64.dmg`,
-        },
-      },
-    },
-    revalidate: 3600,
-  }
 }
