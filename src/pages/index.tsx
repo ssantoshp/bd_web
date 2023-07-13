@@ -25,7 +25,7 @@ export default function Home({
       <section className="w-full xl:w-5/6 2xl:w-3/4 flex flex-col mx-auto">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <LogoLarge className="w-20 xl:w-24 text-white" />
+            <LogoLarge className="w-60 xl:w-60 text-white" />
           </Link>
         </div>
         <div className="flex flex-col xl:flex-row items-center justify-between mt-8 xl:mt-20">
@@ -71,7 +71,7 @@ export default function Home({
             muted
             playsInline
           >
-            <source src="/yack_demo.mp4" type="video/mp4" />
+            <source src="/bd_demo.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
